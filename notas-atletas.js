@@ -17,58 +17,19 @@ let atletas = [
  }
 ];
 
-let nomesDosCompetidores = 0
-       let mediaValida = 0
-       let notasObtidas = 0
-       for (let i = 0; i < atletas.length; i++){
+let atletasOrd=atletas.map ((atleta)=>{ 
+  console.log(`Atleta: ${atleta.nome}`)
+  console.log(`Notas: ${atleta.notas}`)
 
-           nomesDosCompetidores = atletas.map(function(nomes){
-               return nomes.nome
-           })
-           notasObtidas = atletas.map(function(nota){
-               let total =  nota.notas
-               total.sort(function(a,b){
-                   return a - b;
-               });
-               return total
-           })
+let notasOrd=atleta.notas.sort((a, b)=>{
+ return a-b
+});
 
-       }
+let notasSlice=notasOrd.slice(1,4);
 
-       for (let i = 0; i < atletas.length; i++){
-         switch(i){
-             case i:
-             console.log(`Atletas: ${nomesDosCompetidores[i]}`)
-             console.log(`Notas Obtidas: ${notasObtidas[i]}`)
-        let notasAtleta = notasObtidas[i].slice(1,notasObtidas[i].length-1) 
-        let soma = notasAtleta.reduce(function(total, atual){
-            return (total + atual)
-        })
-        let media = soma/notasAtleta.length
-        console.log(`Media valida ${media}`)
-
-         }
-         let nomesDosCompetidores = 0
-         let mediaValida = 0
-         let notasObtidas = 0
-         for (let i = 0; i < atletas.length; i++){
-  
-             nomesDosCompetidores = atletas.map(function(nomes){
-                 return nomes.nome
-             })
-             notasObtidas = atletas.map(function(nota){
-                 let total =  nota.notas
-                 total.sort(function(a,b){
-                     return a - b;
-                 });
-                 return total
-             })
-             let notasAtleta = notasObtidas[i].slice(1,notasObtidas[i].length-1) 
-          let soma = notasAtleta.reduce(function(total, atual){
-              return (total + atual)
-          })
-           let media = soma/notasAtleta.length
-  
-          console.log(`Atleta: ${nomesDosCompetidores[i]}`)
-          console.log(`Notas Obtidas:${notasObtidas[i]}`)
-          console.log(`Média Válida: ${media}`)}
+let somaNota=0
+for (let i = 0; i <notasSlice.length; i++){
+  somaNota+=notasSlice[i]
+}
+console.log("Média " + somaNota / notasSlice.length)
+})
