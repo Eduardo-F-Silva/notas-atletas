@@ -17,12 +17,13 @@ let atletas = [
  }
 ];
 
-let nomesDosCompetidores = 0
-       let mediaValida = 0
-       let notasObtidas = 0
+let nomeAtleta = 0
+let notasObtidas = 0
+let mediaValida = 0
+       
        for (let i = 0; i < atletas.length; i++){
 
-           nomesDosCompetidores = atletas.map(function(nomes){
+           nomeAtleta = atletas.map(function(nomes){
                return nomes.nome
            })
            notasObtidas = atletas.map(function(nota){
@@ -38,7 +39,7 @@ let nomesDosCompetidores = 0
        for (let i = 0; i < atletas.length; i++){
          switch(i){
              case i:
-             console.log(`Atletas: ${nomesDosCompetidores[i]}`)
+             console.log(`Atletas: ${nomeAtleta[i]}`)
              console.log(`Notas Obtidas: ${notasObtidas[i]}`)
         let notasAtleta = notasObtidas[i].slice(1,notasObtidas[i].length-1) 
         let soma = notasAtleta.reduce(function(total, atual){
@@ -48,27 +49,4 @@ let nomesDosCompetidores = 0
         console.log(`Media valida ${media}`)
 
          }
-         let nomesDosCompetidores = 0
-         let mediaValida = 0
-         let notasObtidas = 0
-         for (let i = 0; i < atletas.length; i++){
-  
-             nomesDosCompetidores = atletas.map(function(nomes){
-                 return nomes.nome
-             })
-             notasObtidas = atletas.map(function(nota){
-                 let total =  nota.notas
-                 total.sort(function(a,b){
-                     return a - b;
-                 });
-                 return total
-             })
-             let notasAtleta = notasObtidas[i].slice(1,notasObtidas[i].length-1) 
-          let soma = notasAtleta.reduce(function(total, atual){
-              return (total + atual)
-          })
-           let media = soma/notasAtleta.length
-  
-          console.log(`Atleta: ${nomesDosCompetidores[i]}`)
-          console.log(`Notas Obtidas:${notasObtidas[i]}`)
-          console.log(`Média Válida: ${media}`)}
+       }
